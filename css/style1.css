@@ -9,6 +9,7 @@ body{
     margin: 2%;
     color:#16778C;
     font-weight: lighter;
+    align-items: center;
 }
 .top-right a{
     text-decoration: none;
@@ -17,15 +18,7 @@ body{
 .top-right a:hover{
     color: rgb(235, 140, 106);
 }
-@media screen and (max-width: 768px) { 
-    .top-right{
-        display: none;
-    }
-}
-header img{
-    width: 120px;
-    height: 120px;
-}
+
 
 header button{
     padding: 10px 20px;
@@ -33,7 +26,6 @@ header button{
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
-    border-style: solid 1px;
 }
 .headbutton1{
     background-color: whitesmoke;
@@ -57,12 +49,14 @@ header button{
     border-color:  #11698c;
     color: whitesmoke;
 }
+/*NAVIGATION BAR Start*/
 nav {
     display: flex;
     justify-content: space-evenly;
     padding: 20px;
     background: #16778C;
   }
+  
 nav a{
     text-decoration: none;
     color: #A0D9BE;
@@ -74,18 +68,86 @@ nav a:hover {
 .main1 img{
     width: 100%;
 }
-@media screen and (max-width: 768px) { 
-    nav{
-        display: none;
-    }
+
+
+.navbar-toggle{
+    color: white;
+    font-size: x-large;
+    margin-right:20px;
+    cursor: pointer;
+    font-size: 20pt;
+    display: none; /*hides the navbar toggle*/
 }
 
 
 /*Start of Responsive Nav Bar*/
-.respo-nav{
+@media screen and (max-width: 767px) { 
+
+.main-nav a{
+    padding: 30px;
+    position: static;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: #16778c;
-    font-size: x-large;
+    color: #A0D9BE;
 }
+
+/*hides the navigation bar*/
+.main-nav{
+    align-items: center;
+    display: none;
+    flex-direction: column;
+}
+
+.active-nav{
+    display: flex;
+}
+
+/*displays the  bar toggle visibility*/
+.navbar-toggle{
+    display: block;
+}
+
+/*hides the top-right section*/
+.header{
+    background:#16778c ;
+    margin: 0;
+}
+
+
+#header-logo{
+    width: 30px;
+    margin: 0;
+    padding: 10px;
+}
+
+.top-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top-right h4{
+    display: none;
+}
+
+.headbutton1{
+    margin-right: 20px;
+}
+
+}
+
+@media screen and (max-width: 375px) { 
+.header{
+    flex-direction: column;
+}
+}
+
+
+
+
 /* Start of FOOTER*/
 
 footer{
@@ -219,7 +281,7 @@ hr{
 	border: 3px solid #16778C;
 	border-radius: 10px;
 }
-.tabcontent input[type=submit]{
+.tabcontent button{
     background-color: orange;
     color:white;
     align-content: center;
@@ -228,11 +290,6 @@ hr{
     border-radius:16px ;
     padding: 10px 30px;
     margin-top:10%;
-}
-.tabcontent input[type=submit]:hover{
-    background-color: #ff5e00;
-    border: 2px solid #ff5e00;
-    color:whitesmoke;
 }
 
 
@@ -324,7 +381,6 @@ hr{
     text-decoration: none;
     cursor: pointer;
     border-radius: 16px;
-    border-style: solid 1px;
     padding: 10px 20px;
   }
   .prd-dscr-btn:hover{
@@ -527,11 +583,11 @@ label {
 /*Styles the submit button*/
 #form-submit{
     float: right;
-    width: 80px;
+    width: 100%;
     background-color: #11698c;
     border-color: #11698c;
     color:white;
-    padding: 12px;
+    border-radius:16px ;
     text-align: center;
     font-weight: bolder;
     box-sizing: border-box;
@@ -570,7 +626,6 @@ label {
 .logo img{
     width: 120px;
     fill:#2999A6;
-    display: block;
     margin-top: 20px;
     padding:20px;
 }
@@ -636,11 +691,10 @@ label {
 		background-size: auto auto;
 		background-clip: border-box;
 		background-size: 200% auto;
-		background-clip: text;
-		text-fill-color: transparent;
+		background-clip: border-box;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-        animation: textclip 10s linear infinite;
+        animation: textclip 15s linear infinite;
     }
 
 @keyframes textclip {
@@ -662,9 +716,9 @@ label {
 .list-business-button{
     background-color: orange;
     border-color:orange;
-    border-radius: 4px;
     color:white;
-    padding: 15px;
+    border-radius:16px ;
+    padding: 10px 30px;
     box-sizing: border-box;
     font-weight: bolder;
 }
